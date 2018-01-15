@@ -4,7 +4,7 @@ from books.models import Book
 
 class BookTestCase(TestCase):
     def setUp(self):
-        Book.objects.create(title="Test book", author="Test author", price=1.10, amount=3)
+        Book.objects.create(title="Test book", author="Test author", price=1, amount=3)
 
     def test_book_must_have_author(self):
         test_book = Book.objects.get(title="Test book")

@@ -5,12 +5,12 @@ from django.utils import timezone
 class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
-    description = models.TextField()
+    description = models.TextField(default=None, blank=True, null=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     amount = models.IntegerField()
     created_date = models.DateTimeField(default=timezone.now)
 
-    def create(self, title, author, description, price, amount):
+    def create(self, title, author, price, amount, description=None):
         self.title = title
         self.author = author
         self.description = description
