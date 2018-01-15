@@ -1,3 +1,11 @@
 from django.test import TestCase
+from books.models import Book
 
-# Create your tests here.
+
+class BookTestCase(TestCase):
+    def setUp(self):
+        Book.objects.create(title="Test book", author="Test author", price=1.10, amount=3)
+
+    def test_book_must_have_author(self):
+        test_book = Book.objects.get(title="Test book")
+        self.assertEqual(test_book.author, 'Test author')

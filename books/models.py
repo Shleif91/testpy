@@ -10,7 +10,12 @@ class Book(models.Model):
     amount = models.IntegerField()
     created_date = models.DateTimeField(default=timezone.now)
 
-    def create(self):
+    def create(self, title, author, description, price, amount):
+        self.title = title
+        self.author = author
+        self.description = description
+        self.price = price
+        self.amount = amount
         self.created_date = timezone.now()
         self.save()
 
