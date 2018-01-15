@@ -3,6 +3,17 @@
         <title>Книжный магазин</title>
     </head>
     <body>
-        <p>Все книги:</p>
+        <p>Все книги:
+        {% for books in all_books %}
+        <div>
+            <p>Автор: {{ books.author }}</p>
+            <p>Название книги: {{ books.title }}</p>
+            <p>Описание: {{ books.description }}</p>
+            <p>Цена:{{ books.price }}</p>
+            <p>Наличие: {{ books.amount }}</p>
+            <hr>
+        </div>
+        {% endfor %}
+        </p>
     </body>
 </html>
