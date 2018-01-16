@@ -1,19 +1,15 @@
-<html>
-    <head>
-        <title>Книжный магазин</title>
-    </head>
-    <body>
-        <p>Все книги:
+{% extends 'books/base.html' %}
+
+{% block content %}
+    <h2>Все книги:</h2>
         {% for books in all_books %}
-        <div>
+            <div>
             <p>Автор: {{ books.author }}</p>
             <p>Название книги: {{ books.title }}</p>
             <p>Описание: {{ books.description }}</p>
             <p>Цена:{{ books.price }}</p>
             <p>Наличие: {{ books.amount }}</p>
             <hr>
-        </div>
+            </div>
         {% endfor %}
-        </p>
-    </body>
-</html>
+{% endblock %}
