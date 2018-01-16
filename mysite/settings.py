@@ -27,11 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'rofar91.pythonanywhere.com',
-<<<<<<< Updated upstream
-    '127.0.0.1',
-=======
     '127.0.0.1'
->>>>>>> Stashed changes
 ]
 
 
